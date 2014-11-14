@@ -15,20 +15,25 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        
+        // Nach Nachname fragen
         System.out.println("Vorname ...");
-
+        
+        // Neunen Scanner anlegen, um die Eingaben abzufangen
         Scanner s = new Scanner(System.in);
         String firstname = s.next();
 
+        // Nach Nachname fragen
         System.out.println("Nachname ...");
         String lastname = s.next();
 
+        // Alle Kunden holen
         DBCollection customerColl = db.getCollection("kunden");
         BasicDBObject customer = new BasicDBObject("firstname", firstname).append("lastname", lastname);
         DBCursor customerCursor = customerColl.find(customer);
         DBObject customerObj = null;
         if(customerCursor.hasNext()) {
+            // wenn schon ein Kunde mit dem Namen existiert, die Daten übernehmen
             customerObj = customerCursor.next();
         } else {
             customerColl.insert(customer);
