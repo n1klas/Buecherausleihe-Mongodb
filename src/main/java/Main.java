@@ -43,6 +43,18 @@ public class Main {
         DBCollection bookColl = db.getCollection("bücher");
         DBCursor bookCursor = bookColl.find();
 
+        if (!bookCursor.hasNext()) {
+            // wenn es aktuell keine Bücher gibt
+            BasicDBObject bookObj = new BasicDBObject("title", "Ein Interessantes Buch");
+            BasicDBObject bookObj2 = new BasicDBObject("title", "Schneeflitchen und die sieben Kerle");
+            BasicDBObject bookObj3 = new BasicDBObject("title", "Herr der Dinge");
+            bookColl.insert(bookObj);
+            bookColl.insert(bookObj2);
+            bookColl.insert(bookObj3);
+        }
+        
+        bookCursor = bookColl.find();
+
         System.out.println("\nBücher:");
 
         while(bookCursor.hasNext()) {
