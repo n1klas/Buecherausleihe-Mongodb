@@ -1,0 +1,13 @@
+.idea/.name
+.idea/compiler.xml
+.idea/copyright/profiles_settings.xml
+.idea/encodings.xml
+.idea/libraries/mongo_java_driver_2_13_0_rc0.xml
+.idea/libraries/mongo_java_driver_2_9_3.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/scopes/scope_settings.xml
+.idea/uiDesigner.xml
+.idea/vcs.xml
+.idea/workspace.xml
+MongoDBCRUD.iml
